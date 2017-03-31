@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
-import router from './router'
+import router from 'router/index'
 /* eslint-disable no-new */
 
 Vue.use(VueRouter)

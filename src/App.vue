@@ -13,14 +13,13 @@
 </template>
 
 <script>
-  import SiteHeader from './containers/SiteHeader'
-  import SiteFooter from './containers/SiteFooter'
+  import SiteHeader from 'containers/SiteHeader'
+  import SiteFooter from 'containers/SiteFooter'
   
   export default {
     name: 'app',
     components: {
-      SiteHeader,
-      SiteFooter
+      SiteHeader, SiteFooter
     }
   }
 </script>
