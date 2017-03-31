@@ -14,14 +14,15 @@
         <div class="cs-recipes-category four-recipes">
           <ul class="cs-recipes">
             <!-- Recipe -->
-            <recipe title="Low-Carb Main Dish" image="http://placehold.it/600x600" url="http://google.com" yield="4 Persons" prepTime="20 min" className="first"></recipe>
-            <recipe></recipe>
-            <recipe></recipe>
-            <recipe className="last"></recipe>
-            <recipe></recipe>
-            <recipe></recipe>
-            <recipe></recipe>
-            <recipe className="last"></recipe>
+            <recipe v-for="(recipe, index) in recipes"
+              :className="classNameForIndex(index)"
+              :title="recipe.title" 
+              :image="recipe.image" 
+              :url="recipe.url" 
+              :yield="recipe.yield" 
+              :prepTime="recipe.prepTime">
+            </recipe>
+           
           </ul>
         </div>
         <!-- end .cs-recipes-category -->
@@ -37,10 +38,75 @@
 
   export default {
     name: 'home',
+    methods: {
+      classNameForIndex (i) {
+        const adjustedIndex = i + 1
+        if (adjustedIndex === 1) {
+          return 'first'
+        } else if (!(adjustedIndex % 4)) {
+          return 'last'
+        }
+        return ''
+      }
+    },
     data () {
       return {
+        recipes: [{
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '2 Persons',
+          prepTime: '10 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }, {
+          title: 'Low-Carb Main Dish',
+          image: 'http://placehold.it/600x600',
+          url: 'http://google.com',
+          yield: '4 Persons',
+          prepTime: '20 min'
+        }],
         slides: [{
           title: 'Slide 1',
+          text: 'Lorem ipsum dolor sit amet',
+          image: 'http://placehold.it/1024x341',
+          url: 'http://google.com'
+        }, {
+          title: 'Slide 2',
           text: 'Lorem ipsum dolor sit amet',
           image: 'http://placehold.it/1024x341',
           url: 'http://google.com'

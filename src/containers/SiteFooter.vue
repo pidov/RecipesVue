@@ -4,70 +4,34 @@
       <div class="cs-row">
         <div class="cs-col cs-col-4-of-12">
           <widget title="Recipe tags" className="widget_tag_cloud">
-            <div class="tagcloud">
-              <a href="#">pasta</a>
-              <a href="#">sauce</a>
-              <a href="#">chilli</a>
-              <a href="#">cheese</a>
-              <a href="#">chicken</a>
-              <a href="#">fish</a>
-              <a href="#">tomato</a>
-              <a href="#">meat</a>
-              <a href="#">salt</a>
-              <a href="#">sugar</a>
-              <a href="#">oil</a>
-              <a href="#">pasta</a>
-              <a href="#">sauce</a>
-              <a href="#">chilli</a>
-              <a href="#">cheese</a>
-              <a href="#">chicken</a>
-              <a href="#">fish</a>
-              <a href="#">tomato</a>
-              <a href="#">meat</a>
-              <a href="#">salt</a>
-              <a href="#">sugar</a>
-              <a href="#">oil</a>
-              <a href="#">pasta</a>
-              <a href="#">sauce</a>
-              <a href="#">chilli</a>
-              <a href="#">cheese</a>
-              <a href="#">chicken</a>
-              <a href="#">fish</a>
-              <a href="#">tomato</a>
-              <a href="#">meat</a>
-              <a href="#">salt</a>
-              <a href="#">sugar</a>
-              <a href="#">oil</a>
-            </div>
+            <tag-cloud></tag-cloud>
           </widget>
         </div>
         <div class="cs-col cs-col-4-of-12">
-          <widget title="Latest posts">
-            <div class="cs-widget_latest_posts">
-              <!-- Post item -->
-              <div class="cs-post-item">
-                <div class="cs-post-thumb">
-                  <a href="post_standard.html"><img src="demo/widgets/2.jpg" alt="Bakery"></a>
-                </div>
-                <div class="cs-post-inner">
-                  <h3><a href="post_standard.html">Baked Coconut Tenders with Strawberry-Mango Salsa</a></h3>
-                  <div class="cs-post-meta">
-                    <span class="cs-post-meta-category"><a href="blog_category.html">Food</a></span>
-                    <span class="cs-post-meta-comments"><a href="post_standard.html">6 Comments</a></span>
-                  </div>
+          <widget title="Latest posts" className="cs-widget_latest_posts">
+            <!-- Post item -->
+            <div class="cs-post-item">
+              <div class="cs-post-thumb">
+                <a href="post_standard.html"><img src="demo/widgets/2.jpg" alt="Bakery"></a>
+              </div>
+              <div class="cs-post-inner">
+                <h3><a href="post_standard.html">Baked Coconut Tenders with Strawberry-Mango Salsa</a></h3>
+                <div class="cs-post-meta">
+                  <span class="cs-post-meta-category"><a href="blog_category.html">Food</a></span>
+                  <span class="cs-post-meta-comments"><a href="post_standard.html">6 Comments</a></span>
                 </div>
               </div>
-              <!-- Post item -->
-              <div class="cs-post-item">
-                <div class="cs-post-thumb">
-                  <a href="post_standard.html"><img src="demo/widgets/1.jpg" alt="Bakery"></a>
-                </div>
-                <div class="cs-post-inner">
-                  <h3><a href="post_standard.html">Herbed Chicken With Beets and Brussels</a></h3>
-                  <div class="cs-post-meta">
-                    <span class="cs-post-meta-category"><a href="blog_category.html">Recipes</a></span>
-                    <span class="cs-post-meta-comments"><a href="post_standard.html">13 Comments</a></span>
-                  </div>
+            </div>
+            <!-- Post item -->
+            <div class="cs-post-item">
+              <div class="cs-post-thumb">
+                <a href="post_standard.html"><img src="demo/widgets/1.jpg" alt="Bakery"></a>
+              </div>
+              <div class="cs-post-inner">
+                <h3><a href="post_standard.html">Herbed Chicken With Beets and Brussels</a></h3>
+                <div class="cs-post-meta">
+                  <span class="cs-post-meta-category"><a href="blog_category.html">Recipes</a></span>
+                  <span class="cs-post-meta-comments"><a href="post_standard.html">13 Comments</a></span>
                 </div>
               </div>
             </div>
@@ -90,12 +54,13 @@
 </template>
 
 <script>
-  import Widget from '../components/Widget'
+  import Widget from 'components/Widget'
+  import TagCloud from 'containers/TagCloud'
 
   export default {
     name: 'footer',
     components: {
-      Widget
+      Widget, TagCloud
     }
   }
 </script>
