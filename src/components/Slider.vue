@@ -1,20 +1,30 @@
 <template>
-  <div ref="swiper" class="swiper-container">
-    <div class="swiper-wrapper">
-      <slide v-for="slide in slides" 
-        :title="slide.title" 
-        :text="slide.text" 
-        :image="slide.image"
-        :url="slide.url">
-      </slide>
-    </div>
-
-    <div class="cs-swiper-gallery-controls">
-      <div ref="handlerPrev" class="cs-swiper-button-prev">
-        <i class="fa fa-angle-left"></i>
+  <div>
+    <div ref="swiper" :class="['swiper-container', className]">
+      <div class="swiper-wrapper">
+        <slide v-for="slide in slides" 
+          :title="slide.title" 
+          :text="slide.text" 
+          :image="slide.image" 
+          :url="slide.url"
+          :lightbox="lightbox">
+        </slide>
       </div>
-      <div ref="handlerNext" class="cs-swiper-button-next">
-        <i class="fa fa-angle-right"></i>
+  
+      <div v-if="controls" class="cs-swiper-gallery-controls">
+        <div ref="handlerPrev" class="cs-swiper-button-prev">
+          <i class="fa fa-angle-left"></i>
+        </div>
+        <div ref="handlerNext" class="cs-swiper-button-next">
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
+  
+    <div v-if="thumbs" ref="thumbs" class="cs-recipe-thumbs swiper-container gallery-thumbs">
+      <div class="swiper-wrapper">
+        <slide v-for="slide in slides" :image="slide.image">
+        </slide>
       </div>
     </div>
   </div>
@@ -26,14 +36,24 @@
   
   export default {
     name: 'slider',
-    props: ['slides'],
+    props: ['slides', 'thumbs', 'controls', 'lightbox', 'className'],
     mounted () {
-      Swiper(this.$refs.swiper, {
+      const gallery = new Swiper(this.$refs.swiper, {
         grabCursor: true,
         prevButton: this.$refs.handlerPrev,
         nextButton: this.$refs.handlerNext,
         autoHeight: true
       })
+
+      if (this.thumbs) {
+        const thumbs = Swiper(this.$refs.thumbs, {
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          slideToClickedSlide: true
+        })
+        gallery.params.control = thumbs
+        thumbs.params.control = gallery
+      }
     },
     components: {
       Slide

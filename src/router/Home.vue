@@ -3,7 +3,7 @@
     <!-- Home gallery -->
     <div class="cs-home-slider">
       <div class="cs-container">
-        <slider :slides="slides"></slider>
+        <slider :slides="slides" :controls="true"></slider>
       </div>
     </div>
     <div class="cs-container">
@@ -104,7 +104,7 @@
           title: 'Slide 1',
           text: 'Lorem ipsum dolor sit amet',
           image: 'http://placehold.it/1024x341',
-          url: 'http://google.com'
+          url: 'http://localhost:8080/#/recipe/1'
         }, {
           title: 'Slide 2',
           text: 'Lorem ipsum dolor sit amet',
@@ -123,3 +123,4 @@
 <style scoped>
   
 </style>
+

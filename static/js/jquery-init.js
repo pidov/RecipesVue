@@ -20,11 +20,6 @@
             icons: false
         });
 
-        // Sticky sidebar
-        jQuery(".cs-sticky-sidebar").theiaStickySidebar({
-            additionalMarginTop: 10
-        });
-
         // Sticky main menu
         jQuery(window).scroll(function () {
             var mainmenu = jQuery(".cs-main-navigation-wrapper.cs-menu-is-sticky");
@@ -35,11 +30,6 @@
             }
         });
         jQuery(".cs-main-navigation-wrapper.cs-menu-is-sticky").wrap("<div class='cs-menu-parent'></div>").attr("rel", jQuery(".cs-main-navigation-wrapper.cs-menu-is-sticky").offset().top).parent().height($(".cs-main-navigation-wrapper.cs-menu-is-sticky").height());
-
-        // Ingredients
-        jQuery(".cs-ingredients-check-list ul li").on("click", function(){
-            jQuery(this).toggleClass("active");
-        });
 
         // Custom choosen form elements
         jQuery(".chosen-select").chosen({width: "100%"});
