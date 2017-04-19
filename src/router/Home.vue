@@ -75,40 +75,16 @@
           url: 'http://google.com',
           yield: '2 Persons',
           prepTime: '10 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
         }],
         slides: [{
           title: 'Slide 1',
           text: 'Lorem ipsum dolor sit amet',
-          image: 'http://placehold.it/1024x341',
+          image: 'http://placehold.it/1024x600',
           url: 'http://localhost:8080/#/recipe/1'
         }, {
           title: 'Slide 2',
           text: 'Lorem ipsum dolor sit amet',
-          image: 'http://placehold.it/1024x341',
+          image: 'http://placehold.it/1024x600',
           url: 'http://google.com'
         }]
       }

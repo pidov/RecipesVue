@@ -4,7 +4,8 @@
     <!-- Page title -->
     <div class="cs-page-title">
       <h1>{{title}}</h1>
-      <breadcrumbs></breadcrumbs>
+      <h4>Dramatically catchy recipe secondary title can be positioned here.</h4>
+      <!-- <breadcrumbs></breadcrumbs> -->
     </div>
     <!-- end .cs-page-title -->
     <!-- Main content -->
@@ -29,17 +30,16 @@
           <!-- end .cs-recipe-info -->
           <!-- Recipe details -->
           <div class="cs-recipe-details">
-            <div><span>Preparation</span>45 minutes</div>
-            <div><span>Cook time</span>1 hour 30 minutes</div>
-            <div><span>Difficulty</span>Very easy</div>
-            <div><span>Serving</span>6</div>
+            <div v-for="detail in details">
+              <span>{{detail.name}}</span> {{detail.value}}
+            </div>
           </div>
           <!-- end .cs-recipe-details -->
           <!-- Recipe meta details -->
-          <div class="cs-recipe-meta-details">
+          <!-- <div class="cs-recipe-meta-details">
             <div class="print"><a href="javascript:window.print()"><i class="fa fa-print"></i>Print</a></div>
             <div class="views"><a href="#"><i class="fa fa-eye"></i>1,568</a></div>
-          </div>
+          </div> -->
           <!-- end .cs-recipe-meta-details -->
         </div>
         <div class="cs-col cs-col-6-of-12">
@@ -78,6 +78,19 @@
         title: 'Chow Mein',
         introduction: 'Introduction text',
         ingredients: ['3 tomatoes', '200g sugar'],
+        details: [{
+          name: 'Preparation',
+          value: '45 minutes'
+        }, {
+          name: 'Difficulty',
+          value: 'Very easy'
+        }, {
+          name: 'Cook time',
+          value: '1 hour 30 minutes'
+        }, {
+          name: 'Serving',
+          value: '4'
+        }],
         slides: [{
           image: 'http://placehold.it/1024x600'
         }, {

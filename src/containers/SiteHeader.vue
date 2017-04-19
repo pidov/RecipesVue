@@ -1,5 +1,5 @@
 <template>
-  <header id="cs-header-style-two">
+  <header id="cs-header-style-one">
     <!-- Header main -->
     <div id="cs-header-main">
       <div class="cs-container">
