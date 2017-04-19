@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import CheckBox from 'components/Checkbox'
+  import CheckBox from 'components/CheckBox'
 
   export default {
     name: 'ingredients-list',
