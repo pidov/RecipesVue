@@ -35,6 +35,7 @@
   import Slider from 'components/Slider'
   import Headline from 'components/Headline'
   import Recipe from 'components/Recipe'
+  import * as api from '../services/api'
 
   export default {
     name: 'home',
@@ -51,31 +52,7 @@
     },
     data () {
       return {
-        recipes: [{
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '4 Persons',
-          prepTime: '20 min'
-        }, {
-          title: 'Low-Carb Main Dish',
-          image: 'http://placehold.it/600x600',
-          url: 'http://google.com',
-          yield: '2 Persons',
-          prepTime: '10 min'
-        }],
+        recipes: [],
         slides: [{
           title: 'Slide 1',
           text: 'Lorem ipsum dolor sit amet',
@@ -88,6 +65,20 @@
           url: 'http://google.com'
         }]
       }
+    },
+    mounted () {
+      api.getPosts().then(posts => {
+        const recipes = posts.map(post => ({
+          title: post.title.rendered,
+          image: post['_embedded']['wp:featuredmedia'].find(media => media.id === post.featured_media)['media_details'].sizes.medium.source_url,
+          url: post.link,
+          prepTIme: post.prepTime,
+          yield: post.yeild
+        }))
+        this.recipes = recipes
+      }).catch(
+        console.err
+      )
     },
     components: {
       Slider, Headline, Recipe
