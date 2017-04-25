@@ -2,7 +2,7 @@
   <li :class="['cs-recipe', className]">
     <div class="cs-recipe-image">
       <div class="cs-recipe-details-button">
-        <a :href="url">Details</a>
+         <router-link :to="url">Details</router-link>
       </div>
       <img :src="image" :alt="title">
     </div>
@@ -17,7 +17,7 @@
       </span>
     </div>
     <h3>
-      <a :href="url">{{title}}</a>
+      <router-link :to="url">{{title}}</router-link>
     </h3>
   </li>
 </template>

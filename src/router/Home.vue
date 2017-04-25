@@ -17,10 +17,10 @@
             <recipe v-for="(recipe, index) in recipes"
               :className="classNameForIndex(index)"
               :title="recipe.title" 
-              :image="recipe.image" 
-              :url="recipe.url" 
-              :yield="recipe.yield" 
-              :prepTime="recipe.prepTime">
+              :image="recipe['teaser-image']" 
+              :url="`recipe/${recipe.id}`" 
+              :yield="recipe.serving" 
+              :prepTime="recipe['preparation-time']">
             </recipe>
            
           </ul>
@@ -67,9 +67,8 @@
       }
     },
     mounted () {
-      api.getRecipes().then(posts => {
-        console.log(posts)
-        this.recipes = posts
+      api.getRecipes().then(recipes => {
+        this.recipes = recipes
       }).catch(
         console.err
       )

@@ -37,7 +37,7 @@
   export default {
     name: 'slider',
     props: ['slides', 'thumbs', 'controls', 'lightbox', 'className'],
-    mounted () {
+    updated () {
       const gallery = new Swiper(this.$refs.swiper, {
         grabCursor: true,
         prevButton: this.$refs.handlerPrev,

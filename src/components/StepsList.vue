@@ -5,11 +5,11 @@
         <h5>{{index + 1}}</h5>
       </div>
       <div class="step-description">
-        <h3>
-          {{step.title}}
+        <h3 v-if="step.name">
+          {{step.name}}
           <span v-if="step.duration">{{step.duration}}</span>
         </h3>
-        <p>{{step.text}}</p>
+        <div v-html="step.text"></div>
       </div>
     </li>
   </ul>
