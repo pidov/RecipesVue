@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
-function getPosts () {
-  const url = 'http://blog.ipidov.com/wp-json/wp/v2/posts?_embed'
+function getRecipes () {
+  const url = 'http://95.85.11.126/wp-json/wp/v2/recipes'
 
   return fetch(url).then(response => {
     if (response.status >= 400) {
@@ -22,5 +22,5 @@ function getPosts () {
 }
 
 export {
-  getPosts
+  getRecipes
 }

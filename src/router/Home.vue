@@ -67,15 +67,9 @@
       }
     },
     mounted () {
-      api.getPosts().then(posts => {
-        const recipes = posts.map(post => ({
-          title: post.title.rendered,
-          image: post['_embedded']['wp:featuredmedia'].find(media => media.id === post.featured_media)['media_details'].sizes.medium.source_url,
-          url: post.link,
-          prepTIme: post.prepTime,
-          yield: post.yeild
-        }))
-        this.recipes = recipes
+      api.getRecipes().then(posts => {
+        console.log(posts)
+        this.recipes = posts
       }).catch(
         console.err
       )
