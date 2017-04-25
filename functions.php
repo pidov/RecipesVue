@@ -113,29 +113,9 @@ add_action( 'wp_enqueue_scripts', 'recipes_scripts' );
 /**
  * Set up rest endpoints
  */
-function register_custom_fields() {
-  register_rest_field('recipe', 'gallery-slides', array('get_callback' => 'show_fields') );
-  register_rest_field('recipe', 'directions', array('get_callback' => 'show_fields') );
-  register_rest_field('recipe', 'serving', array('get_callback' => 'show_field') );
-  register_rest_field('recipe', 'preparation-time', array('get_callback' => 'show_field') );
-  register_rest_field('recipe', 'cuisine', array('get_callback' => 'show_taxonomy') );
-  register_rest_field('recipe', 'difficulty', array('get_callback' => 'show_taxonomy') );
-  register_rest_field('recipe', 'course', array('get_callback' => 'show_taxonomy') );
-  register_rest_field('recipe', 'season', array('get_callback' => 'show_taxonomy') );
-}
 
-function show_taxonomy($object, $field_name, $request) {
-  return get_the_terms($object['id'], $field_name);
-}
+add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
-function show_fields($object, $field_name, $request) {
-  $field_name = 'wpcf-' . $field_name;
-  return get_post_meta($object['id'], $field_name);
-}
+// Enable the option edit in rest
+add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
 
-function show_field($object, $field_name, $request) {
-  $field_name = 'wpcf-' . $field_name;
-  return get_post_meta($object['id'], $field_name, true);
-}
-
-add_action( 'rest_api_init', 'register_custom_fields' );
