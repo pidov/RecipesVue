@@ -8,8 +8,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url(/wp-content/themes/recipes/distfonts/fontawesome-webfont.674f50d.eot);
-  src: url(/wp-content/themes/recipes/distfonts/fontawesome-webfont.674f50d.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(/wp-content/themes/recipes/distfonts/fontawesome-webfont.af7ae50.woff2) format("woff2"), url(/wp-content/themes/recipes/distfonts/fontawesome-webfont.fee66e7.woff) format("woff"), url(/wp-content/themes/recipes/distfonts/fontawesome-webfont.b06871f.ttf) format("truetype"), url(/wp-content/themes/recipes/distimg/fontawesome-webfont.912ec66.svg#fontawesomeregular) format("svg");
+  src: url(/wp-content/themes/recipes/dist/fonts/fontawesome-webfont.674f50d.eot);
+  src: url(/wp-content/themes/recipes/dist/fonts/fontawesome-webfont.674f50d.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(/wp-content/themes/recipes/dist/fonts/fontawesome-webfont.af7ae50.woff2) format("woff2"), url(/wp-content/themes/recipes/dist/fonts/fontawesome-webfont.fee66e7.woff) format("woff"), url(/wp-content/themes/recipes/dist/fonts/fontawesome-webfont.b06871f.ttf) format("truetype"), url(/wp-content/themes/recipes/dist/img/fontawesome-webfont.912ec66.svg#fontawesomeregular) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -2943,4 +2943,4 @@
 
 
 
-/*# sourceMappingURL=app.8824cbbd19010bf754dccfbc0cd2b114.css.map*/
+/*# sourceMappingURL=app.92dd60e3a538692ea90476add35b852b.css.map*/
