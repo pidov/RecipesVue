@@ -63,11 +63,26 @@ export function getRecipeBySlug (id) {
   .then(normalize)
 }
 
+function sum (values) {
+  let total = 0
+  for (var i = 0; i < values.length; i++) {
+    const value = Number(values[i]) || 0
+    total += value
+  }
+  return total
+}
+
+function getTotalPreparationTime (recipe) {
+  const timesByStep = recipe.directions.map(direction => direction.duration)
+  return sum(timesByStep)
+}
+
 function normalize (recipe) {
-  console.log(recipe)
+  recipe = Object.assign(recipe, recipe.acf)
+  delete recipe.acf
   recipe.title = recipe.title.rendered
   recipe.content = recipe.content.rendered
-  recipe.gallery = recipe.acf.gallery
-  recipe.directions = recipe.acf.directions
+  recipe.preparation_time = getTotalPreparationTime(recipe)
+
   return recipe
 }

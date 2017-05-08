@@ -1,7 +1,7 @@
 <template>
   <div :class="$options.name">
     <!-- Home gallery -->
-    <div class="cs-home-slider">
+    <div class="cs-home-slider" v-if="false"> <!-- Hide not implemented -->
       <div class="cs-container">
         <slider :slides="slides" :controls="true"></slider>
       </div>
@@ -10,17 +10,17 @@
       <!-- Main content -->
       <div class="cs-main-content">
         <!-- Recipes category -->
-        <headline text="Popular recipes"></headline>
+        <headline text="Популярни рецепти"></headline>
         <div class="cs-recipes-category four-recipes">
           <ul class="cs-recipes">
             <!-- Recipe -->
             <recipe v-for="(recipe, index) in recipes"
               :className="classNameForIndex(index)"
               :title="recipe.title" 
-              :image="recipe['teaser-image']" 
-              :url="`recipe/${decodeURI(recipe.slug)}`" 
-              :yield="recipe.serving" 
-              :prepTime="recipe['preparation-time']">
+              :image="recipe.featured_image" 
+              :url="`рецепта/${decodeURI(recipe.slug)}`" 
+              :serving="recipe.serving" 
+              :prepTime="recipe.preparation_time">
             </recipe>
            
           </ul>
@@ -68,6 +68,7 @@
     },
     mounted () {
       api.getRecipes().then(recipes => {
+        console.log(recipes)
         this.recipes = recipes
       }).catch(
         console.err

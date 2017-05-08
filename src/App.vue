@@ -47,7 +47,7 @@
     <!-- Copyright -->
     <div id="cs-copyright">
       <div class="cs-container">
-        &copy; Copyright 2016. All rights reserved.
+        &copy; 2017 Всички права запазени.
       </div>
     </div>
   </div>

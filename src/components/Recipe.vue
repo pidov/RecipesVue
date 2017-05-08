@@ -2,18 +2,18 @@
   <li :class="['cs-recipe', className]">
     <div class="cs-recipe-image">
       <div class="cs-recipe-details-button">
-         <router-link :to="url">Details</router-link>
+         <router-link :to="url">Подробно</router-link>
       </div>
-      <img :src="image" :alt="title">
+      <img v-if="image" :src="image" :alt="title">
     </div>
     <div class="cs-recipe-meta">
       <span>
         <i class="fa fa-hourglass-half"></i> 
-        {{prepTime}}
+        {{prepTime | duration}}
       </span>
       <span>
         <i class="fa fa-cutlery"></i> 
-        {{yield}}
+        {{serving}}
       </span>
     </div>
     <h3>
@@ -25,7 +25,7 @@
 <script>
   export default {
     name: 'headline',
-    props: ['title', 'className', 'url', 'image', 'prepTime', 'yield']
+    props: ['title', 'className', 'url', 'image', 'prepTime', 'serving']
   }
 </script>
 

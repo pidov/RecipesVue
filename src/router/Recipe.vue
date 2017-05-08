@@ -8,13 +8,13 @@
     </div>
     <!-- end .cs-page-title -->
     <!-- Main content -->
-    <div class="cs-main-content cs-sidebar-on-the-right">
+    <div class="cs-main-content"> <!-- .cs-sidebar-on-the-right -->
       <div class="cs-row">
         <div class="cs-col cs-col-12-of-12">
           <!-- Recipe media -->
           <div class="cs-recipe-media">
             <!-- Swiper gallery -->
-            <slider :slides="recipe.gallery" :thumbs="true" :controls="true" :lightbox="true"></slider>
+            <slider :slides="recipe.gallery" :thumbs="true" :controls="true" :lightbox="false"></slider>
             </div>
           <!-- end .cs-recipe-media -->
         </div>
@@ -28,13 +28,13 @@
           </div>
           <div class="cs-recipe-details">
             <div>
-              <span>Време за приготвяне</span> {{recipe['preparation-time']}}
+              <span>Време за приготвяне</span> {{recipe.preparation_time | duration}}
             </div>
             <div>
-              <span>Трудност</span> {{recipe.acf.taxonomies[0].difficulty.name}}
+              <span>Трудност</span> {{recipe.taxonomies[0].difficulty.name}}
             </div>
             <div>
-              <span>Порции</span> {{recipe.acf.serving}}
+              <span>Порции</span> {{recipe.serving}}
             </div>
           </div>
           <!-- end .cs-recipe-details -->
@@ -47,7 +47,7 @@
         </div>
         <div class="cs-col cs-col-6-of-12">
           <!-- Ingredients check list -->
-            <ingredients-list :ingredients="recipe.acf.ingredients"></ingredients-list>
+            <ingredients-list :ingredients="recipe.ingredients"></ingredients-list>
           <!-- end .cs-ingredients-check-list -->
         </div>
       </div>
@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <sidebar></sidebar>
+    <sidebar v-if="hide"></sidebar> <!-- Hide. Not implemented -->
   </div>
   <!-- end .cs-container -->
 </template>

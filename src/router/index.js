@@ -13,11 +13,11 @@ export default new Router({
       name: 'Home',
       component: Home
     }, {
-      path: '/recipe/:slug',
+      path: '/рецепта/:slug',
       name: 'Recipe',
       component: Recipe
     }, {
-      path: '/recipes',
+      path: '/рецепти',
       name: 'Recipes',
       component: Recipes
     }

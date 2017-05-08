@@ -7,7 +7,7 @@
           <div class="cs-header-body-row">
             <!-- Logo brand image -->
             <div id="cs-logo-brand">
-              <a href="index.html"><img src="demo/Bakery.png" alt="Bakery"></a>
+              <a href="http://localhost:8080/#/"><img src="demo/Bakery.png" alt="Bakery"></a>
             </div>
             <!-- end .cs-logo-brand -->
             <!-- Toggle button for menu -->
@@ -44,7 +44,7 @@
           url: 'http://localhost:8080/#/'
         }, {
           name: 'Рецепти',
-          url: 'http://localhost:8080/#/recipes'
+          url: 'http://localhost:8080/#/рецепти'
         }]
       }
     },
