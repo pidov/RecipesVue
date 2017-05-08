@@ -1,7 +1,7 @@
 <template>
   <div :class="$options.name">
     <!-- Home gallery -->
-    <div class="cs-home-slider" v-if="false"> <!-- Hide not implemented -->
+    <div class="cs-home-slider" v-if="true"> <!-- Hide not implemented -->
       <div class="cs-container">
         <slider :slides="slides" :controls="true"></slider>
       </div>

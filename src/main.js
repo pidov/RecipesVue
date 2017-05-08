@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import App from './App'
 import router from 'router/index'
 import Filters from './filters'
-
+require('swiper')
 /* eslint-disable no-new */
 
 Vue.use(VueRouter
