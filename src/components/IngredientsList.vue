@@ -3,7 +3,9 @@
     <h3>Продукти</h3>
     <ul>
       <li v-for="ingredient in ingredients">
-        <check-box :text="ingredient"></check-box>
+        <check-box>
+          {{ingredient.name}} : {{ingredient.quantity}}
+        </check-box>
       </li>
     </ul>
   </div>

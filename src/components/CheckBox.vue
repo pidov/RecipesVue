@@ -4,6 +4,7 @@
       <i class="fa fa-check"></i>
     </div>
     {{text}}
+    <slot></slot>
   </div>
 </template>
 

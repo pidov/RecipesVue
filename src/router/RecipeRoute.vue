@@ -31,10 +31,10 @@
               <span>Време за приготвяне</span> {{recipe['preparation-time']}}
             </div>
             <div>
-              <span>Трудност</span> {{recipe.difficulty}}
+              <span>Трудност</span> {{recipe.acf.taxonomies[0].difficulty.name}}
             </div>
             <div>
-              <span>Порции</span> {{recipe.serving}}
+              <span>Порции</span> {{recipe.acf.serving}}
             </div>
           </div>
           <!-- end .cs-recipe-details -->
@@ -47,7 +47,7 @@
         </div>
         <div class="cs-col cs-col-6-of-12">
           <!-- Ingredients check list -->
-            <ingredients-list :ingredients="recipe.ingredients"></ingredients-list>
+            <ingredients-list :ingredients="recipe.acf.ingredients"></ingredients-list>
           <!-- end .cs-ingredients-check-list -->
         </div>
       </div>
