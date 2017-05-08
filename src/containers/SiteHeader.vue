@@ -7,7 +7,9 @@
           <div class="cs-header-body-row">
             <!-- Logo brand image -->
             <div id="cs-logo-brand">
-              <a href="http://localhost:8080/#/"><img src="demo/Bakery.png" alt="Bakery"></a>
+              <a href="http://95.85.11.126/#/">
+                <h1>Глезотийки</h1>
+              </a>
             </div>
             <!-- end .cs-logo-brand -->
             <!-- Toggle button for menu -->
@@ -41,10 +43,10 @@
       return {
         items: [{
           name: 'Начало',
-          url: 'http://localhost:8080/#/'
+          url: 'http://95.85.11.126/#/'
         }, {
           name: 'Рецепти',
-          url: 'http://localhost:8080/#/рецепти'
+          url: 'http://95.85.11.126/#/рецепти'
         }]
       }
     },
