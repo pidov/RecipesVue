@@ -2,7 +2,7 @@
   <div id="cs-wrapper" class="wide">
     <site-header></site-header>
     <router-view></router-view>
-    <page-footer>
+    <page-footer v-if="false"> <!-- Hide footer; Not implemented. TODO: Add footer -->
       <widget slot="left-column" title="Recipe tags" className="widget_tag_cloud">
         <tag-cloud></tag-cloud>
       </widget>
