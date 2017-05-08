@@ -18,7 +18,7 @@
               :className="classNameForIndex(index)"
               :title="recipe.title" 
               :image="recipe['teaser-image']" 
-              :url="`recipe/${recipe.id}`" 
+              :url="`recipe/${decodeURI(recipe.slug)}`" 
               :yield="recipe.serving" 
               :prepTime="recipe['preparation-time']">
             </recipe>

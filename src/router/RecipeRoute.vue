@@ -98,9 +98,7 @@
     },
     methods: {
       getRecipe () {
-        api.getRecipe(this.$route.params.id).then(recipe => {
-          recipe.directions = recipe.acf.directions
-          recipe.gallery = recipe.acf.gallery
+        api.getRecipeBySlug(this.$route.params.slug).then(recipe => {
           this.recipe = recipe
         }).catch(console.err)
       }

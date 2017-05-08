@@ -7,7 +7,7 @@
       <div class="step-description">
         <h3 v-if="step.name">
           {{step.name}}
-          <span v-if="step.duration">{{step.duration}}</span>
+          <span v-if="step.duration">{{step.duration | duration}}</span>
         </h3>
         <div v-html="step.text"></div>
       </div>

@@ -12,7 +12,7 @@ export default new Router({
       name: 'Home',
       component: Home
     }, {
-      path: '/recipe/:id',
+      path: '/recipe/:slug',
       name: 'Recipe',
       component: RecipeRoute
     }
