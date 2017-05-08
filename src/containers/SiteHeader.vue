@@ -40,20 +40,11 @@
     data () {
       return {
         items: [{
-          name: 'Home',
+          name: 'Начало',
           url: 'http://localhost:8080/#/'
         }, {
-          name: 'Pages',
-          items: [{
-            name: 'Recipe',
-            url: 'http://localhost:8080/#/recipe/1'
-          }, {
-            name: 'Pages',
-            items: [{
-              name: 'Recipe',
-              url: 'http://localhost:8080/#/recipe/1'
-            }]
-          }]
+          name: 'Рецепти',
+          url: 'http://localhost:8080/#/recipes'
         }]
       }
     },
