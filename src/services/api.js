@@ -63,6 +63,22 @@ export function getRecipeBySlug (id) {
   .then(normalize)
 }
 
+export function getBlogInfo () {
+  const url = `http://95.85.11.126/wp-json`
+
+  return fetch(url).then(response => {
+    if (response.status >= 400) {
+      return Promise.reject({
+        message: 'Bad response from server'
+      })
+    }
+    return response.json()
+  })
+  .then(info => info !== void 0 ? info : Promise.reject({
+    message: 'Info unavailable'
+  }))
+}
+
 function sum (values) {
   let total = 0
   for (var i = 0; i < values.length; i++) {

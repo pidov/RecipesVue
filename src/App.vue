@@ -1,6 +1,6 @@
 <template>
   <div id="cs-wrapper" class="wide">
-    <site-header></site-header>
+    <site-header :title="title"></site-header>
     <router-view></router-view>
     <page-footer v-if="false"> <!-- Hide footer; Not implemented. TODO: Add footer -->
       <widget slot="left-column" title="Recipe tags" className="widget_tag_cloud">
@@ -58,6 +58,7 @@
   import PageFooter from 'components/PageFooter'
   import Widget from 'components/Widget'
   import TagCloud from 'containers/TagCloud'
+  import {getBlogInfo} from 'services/api'
   
   export default {
     name: 'app',
@@ -66,6 +67,16 @@
       PageFooter,
       Widget,
       TagCloud
+    },
+    data() {
+      return {
+        title: ''
+      }
+    },
+    mounted() {
+      getBlogInfo().then(info => {
+        this.title = info.name
+      })
     }
   }
 </script>

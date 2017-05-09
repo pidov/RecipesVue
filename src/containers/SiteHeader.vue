@@ -8,7 +8,7 @@
             <!-- Logo brand image -->
             <div id="cs-logo-brand">
               <a href="http://95.85.11.126/#/">
-                <h1>Глезотийки</h1>
+                <h1>{{title}}</h1>
               </a>
             </div>
             <!-- end .cs-logo-brand -->
@@ -39,6 +39,7 @@
 
   export default {
     name: 'header',
+    props: ['title'],
     data () {
       return {
         items: [{
